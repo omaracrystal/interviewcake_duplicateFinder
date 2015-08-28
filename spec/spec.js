@@ -4,6 +4,7 @@ var before = 'find you will pain only go you recordings security the into if'
 
 var after = 'if into the security recordings you go only pain will you find'
 
+
 describe("Reverse String Function", function() {
   it("Takes a string and outputs the string in reverse with the words in place", function() {
     expect(code.reverseMessage1(before)).toEqual(after);
@@ -37,5 +38,11 @@ describe("Reverse String Function", function() {
 describe("Reverse String Function", function() {
   it("Takes a string and outputs the string in reverse with the words in place", function() {
     expect(code.reverseMessage6(before)).toEqual(after);
+  });
+});
+
+describe("Reverse String Function", function() {
+  it("Takes a string and outputs the string in reverse with the words in place", function() {
+    expect(code.reverseMessage7(before)).toEqual(after);
   });
 });

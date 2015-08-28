@@ -7,21 +7,22 @@ var before = 'find you will pain only go you recordings security the into if'
 
 var after = 'if into the security recordings you go only pain will you find'
 
+
 /*
 \\- - - - - - - - //
  \\   RESULT 1   //
   \\ - - - - - -//
 */
-function reverseMessage1(string) {
-  var array = string.split(" ");
-  /* loop through array and replace first index with last index, second index with second to last index, third index with third to last index, etc */
-  for (var i = 0,j=(array.length)-1; i < array.length/2; i++) {
-    temp=array[i]
-    array[i] = array[j];
-    array[j]=array[i]
-    array[j] = temp; j--;
+function reverseMessage1(str) {
+  var arr = str.split(" ");
+  /* loop through arr and replace first index with last index, second index with second to last index, third index with third to last index, etc */
+  for (var i = 0,j=(arr.length)-1; i < arr.length/2; i++) {
+    temp=arr[i]
+    arr[i] = arr[j];
+    arr[j]=arr[i]
+    arr[j] = temp; j--;
   }
-  return array.join(" ");
+  return arr.join(" ");
 };
 
 reverseMessage1(before);
@@ -32,11 +33,11 @@ reverseMessage1(before);
  \\   RESULT 2   //
   \\ - - - - - -//
 */
-function reverseMessage2(string) {
-  var array = string.split(" ");
+function reverseMessage2(str) {
+  var arr = str.split(" ");
       result="";
-  for (var i = array.length-1; i >=0; i--) {
-    result+=array[i]+" ";
+  for (var i = arr.length-1; i >=0; i--) {
+    result+=arr[i]+" ";
   }
   return result;
 };
@@ -49,14 +50,14 @@ reverseMessage2(before);
  \\   RESULT 3   //
   \\ - - - - - -//
 */
-function reverseMessage3(string) {
-  var array = string.split(" "),
-    length = array.length;
+function reverseMessage3(str) {
+  var arr = str.split(" "),
+    length = arr.length;
     i = length/2 | 0;
   while (i--) {
-    array.splice(i, 1, array.splice(length-1-i, 1, array[i])[0]);
+    arr.splice(i, 1, arr.splice(length-1-i, 1, arr[i])[0]);
   }
-  return array.join(' ');
+  return arr.join(' ');
 };
 
 reverseMessage3
@@ -67,8 +68,8 @@ reverseMessage3
  \\   RESULT 4   //
   \\ - - - - - -//
 */
-function reverseMessage4(string) {
-  return string.split(" ").reverse().join(" ");
+function reverseMessage4(str) {
+  return str.split(" ").reverse().join(" ");
 };
 
 reverseMessage4(before);
@@ -79,11 +80,11 @@ reverseMessage4(before);
  \\   RESULT 5   //
   \\ - - - - - -//
 */
-var reverseMessage5 = function(string) {
+var reverseMessage5 = function(str) {
   var result = [],
-      array = string.split(" ");
-  while (array.length)
-    result.push(array.pop());
+      arr = str.split(" ");
+  while (arr.length)
+    result.push(arr.pop());
   return result.join(" ");
 };
 
@@ -95,29 +96,50 @@ reverseMessage5(before);
  \\   RESULT 6   //
   \\ - - - - - -//
 */
-function reverseMessage6(string) {
-  var array = [];
+function reverseMessage6(str) {
+  var arr = [];
   var temp = "";
-  for(var i = 0 ; i < string.length ; i++) {
-    if(string[i] === " ")
+  for(var i = 0 ; i < str.length ; i++) {
+    if(str[i] === " ")
     {
-      array.push(temp);
+      arr.push(temp);
       temp = "";
     } else {
-      temp += string[i];
+      temp += str[i];
     }
   }
   if(temp.length >= 0) {
-    array.push(temp);
+    arr.push(temp);
   }
   var result = "";
-  for(var j = array.length-1; j >=0 ; j--) {
-    result += array[j] + " ";
+  for(var j = arr.length-1; j >=0 ; j--) {
+    result += arr[j] + " ";
   }
   return result;
 }
 
 reverseMessage6(before);
+
+
+/*
+\\- - - - - - - - //
+ \\   RESULT 7   //
+  \\ - - - - - -//
+*/
+function reverseMessage7(str) {
+  var arr = str.split('');
+  var temp = [];
+  while (arr.length >= arr.slice(0, arr.indexOf(' ')).length) {
+    if (arr.lastIndexOf(' ') !== -1) {
+      temp.push(arr.splice(arr.lastIndexOf(' ')).splice(1))
+    } else {
+      break;
+    }
+  }
+  temp.push(arr)
+  var newStr = temp.join(' ')
+  return newStr.replace(/,/g, '');
+}
 
 /*
 \\- - - - - - -  //
@@ -154,4 +176,5 @@ module.exports = {
   reverseMessage4 : reverseMessage4,
   reverseMessage5 : reverseMessage5,
   reverseMessage6 : reverseMessage6,
+  reverseMessage7 : reverseMessage7
 }
