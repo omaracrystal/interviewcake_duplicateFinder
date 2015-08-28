@@ -1,11 +1,20 @@
+// add scripts
+// $(document).on('ready', function() {
+//   console.log('sanity check!');
+// });
+
 var before = 'find you will pain only go you recordings security the into if'
 
 var after = 'if into the security recordings you go only pain will you find'
 
-///////////////////////////////////* RESULT 1 *////////////////////////////////////
+/*
+\\- - - - - - - - //
+ \\   RESULT 1   //
+  \\ - - - - - -//
+*/
 function reverseMessage1(string) {
   var array = string.split(" ");
-  /*loop through array and replace first index with last index, second index with second to last index, third index with third to last index, etc */
+  /* loop through array and replace first index with last index, second index with second to last index, third index with third to last index, etc */
   for (var i = 0,j=(array.length)-1; i < array.length/2; i++) {
     temp=array[i]
     array[i] = array[j];
@@ -18,7 +27,11 @@ function reverseMessage1(string) {
 reverseMessage1(before);
 
 
-///////////////////////////////////* RESULT 2 *////////////////////////////////////
+/*
+\\- - - - - - - - //
+ \\   RESULT 2   //
+  \\ - - - - - -//
+*/
 function reverseMessage2(string) {
   var array = string.split(" ");
       result="";
@@ -31,7 +44,11 @@ function reverseMessage2(string) {
 reverseMessage2(before);
 
 
-///////////////////////////////////* RESULT 3 *////////////////////////////////////
+/*
+\\- - - - - - - - //
+ \\   RESULT 3   //
+  \\ - - - - - -//
+*/
 function reverseMessage3(string) {
   var array = string.split(" "),
     length = array.length;
@@ -45,7 +62,11 @@ function reverseMessage3(string) {
 reverseMessage3
 
 
-///////////////////////////////////* RESULT 4 *////////////////////////////////////
+/*
+\\- - - - - - - - //
+ \\   RESULT 4   //
+  \\ - - - - - -//
+*/
 function reverseMessage4(string) {
   return string.split(" ").reverse().join(" ");
 };
@@ -53,7 +74,11 @@ function reverseMessage4(string) {
 reverseMessage4(before);
 
 
-///////////////////////////////////* RESULT 5 *////////////////////////////////////
+/*
+\\- - - - - - - - //
+ \\   RESULT 5   //
+  \\ - - - - - -//
+*/
 var reverseMessage5 = function(string) {
   var result = [],
       array = string.split(" ");
@@ -65,7 +90,11 @@ var reverseMessage5 = function(string) {
 reverseMessage5(before);
 
 
-///////////////////////////////////* RESULT 6 *////////////////////////////////////
+/*
+\\- - - - - - - - //
+ \\   RESULT 6   //
+  \\ - - - - - -//
+*/
 function reverseMessage6(string) {
   var array = [];
   var temp = "";
@@ -90,8 +119,10 @@ function reverseMessage6(string) {
 
 reverseMessage6(before);
 
-/* NOTES */
 /*
+\\- - - - - - -  //
+ \\    NOTES    //
+  \\ - - - - - //
 http://www.sitepoint.com/immutability-javascript/
 
 http://stackoverflow.com/questions/9544182/why-are-strings-immutable-in-many-programming-languages
@@ -116,3 +147,11 @@ When working with text one has to remember that strings in javaScript are immuta
 Immutability of strings has many advantages, but it can cause problems if programmer forgets that any "change" to the string actually causes creation of a new instance of String class. Although the CLR(Common Language Runtime) treats strings in a special way, they are still a reference type, for which the memory is allocated on the managed heap.
  */
 
+module.exports = {
+  reverseMessage1 : reverseMessage1,
+  reverseMessage2 : reverseMessage2,
+  reverseMessage3 : reverseMessage3,
+  reverseMessage4 : reverseMessage4,
+  reverseMessage5 : reverseMessage5,
+  reverseMessage6 : reverseMessage6,
+}
