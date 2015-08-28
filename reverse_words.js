@@ -1,39 +1,93 @@
-var message = 'find you will pain only go you recordings security the into if'
+var before = 'find you will pain only go you recordings security the into if'
 
-var results = 'if into the security recordings you go only pain will you find'
+var after = 'if into the security recordings you go only pain will you find'
 
 ///////////////////////////////////* RESULT 1 *////////////////////////////////////
 function reverseMessage1(string) {
   var array = string.split(" ");
-  var result="";
-  for (var i = array.length-1; i >=0; i--) {
-    result+=array[i]+" ";
+  /*loop through array and replace first index with last index, second index with second to last index, third index with third to last index, etc */
+  for (var i = 0,j=(array.length)-1; i < array.length/2; i++) {
+    temp=array[i]
+    array[i] = array[j];
+    array[j]=array[i]
+    array[j] = temp; j--;
   }
-  console.log(result);
+  return array.join(" ");
 };
 
-reverseMessage1(message);
+reverseMessage1(before);
 
 
 ///////////////////////////////////* RESULT 2 *////////////////////////////////////
-function reverseMessage2(string){
+function reverseMessage2(string) {
+  var array = string.split(" ");
+      result="";
+  for (var i = array.length-1; i >=0; i--) {
+    result+=array[i]+" ";
+  }
+  return result;
+};
+
+reverseMessage2(before);
+
+
+///////////////////////////////////* RESULT 3 *////////////////////////////////////
+function reverseMessage3(string) {
   var array = string.split(/ /),
     length = array.length;
     i = length/2 | 0;
   while (i--) array.splice(i, 1, array.splice(length-1-i, 1, array[i])[0]);
   return array.join(' ');
-}
+};
 
-reverseMessage2(message);
+reverseMessage3
 
 
-///////////////////////////////////* RESULT 3 *////////////////////////////////////
-function reverseMessage3(string) {
+///////////////////////////////////* RESULT 4 *////////////////////////////////////
+function reverseMessage4(string) {
   return string.split(" ").reverse().join(" ");
+};
+
+reverseMessage4(before);
+
+
+///////////////////////////////////* RESULT 5 *////////////////////////////////////
+var reverseMessage5 = function(string) {
+  var result = [],
+      space = " ",
+      array = string.split(space);
+  while (array.length)
+    result.push(array.pop());
+  return result.join(space);
+};
+
+reverseMessage5(before);
+
+
+///////////////////////////////////* RESULT 6 *////////////////////////////////////
+function reverseMessage6(string) {
+  var array = [];
+  var temp = "";
+  for(var i = 0 ; i < string.length ; i++) {
+    if(string[i] === " ")
+    {
+      array.push(temp);
+      temp = "";
+    } else {
+      temp += string[i];
+    }
+  }
+  if(temp.length >= 0) {
+    array.push(temp);
+  }
+  var result = "";
+  for(var j = array.length-1; j >=0 ; j--) {
+    result += array[j] + " ";
+  }
+  return result;
 }
 
-reverseMessage3(message);
-
+reverseMessage6(before);
 
 /* NOTES */
 /*
