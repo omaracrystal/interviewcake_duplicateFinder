@@ -33,10 +33,12 @@ reverseMessage2(before);
 
 ///////////////////////////////////* RESULT 3 *////////////////////////////////////
 function reverseMessage3(string) {
-  var array = string.split(/ /),
+  var array = string.split(" "),
     length = array.length;
     i = length/2 | 0;
-  while (i--) array.splice(i, 1, array.splice(length-1-i, 1, array[i])[0]);
+  while (i--) {
+    array.splice(i, 1, array.splice(length-1-i, 1, array[i])[0]);
+  }
   return array.join(' ');
 };
 
