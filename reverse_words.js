@@ -54,11 +54,10 @@ reverseMessage4(before);
 ///////////////////////////////////* RESULT 5 *////////////////////////////////////
 var reverseMessage5 = function(string) {
   var result = [],
-      space = " ",
-      array = string.split(space);
+      array = string.split(" ");
   while (array.length)
     result.push(array.pop());
-  return result.join(space);
+  return result.join(" ");
 };
 
 reverseMessage5(before);
