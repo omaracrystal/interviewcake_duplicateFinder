@@ -19,7 +19,7 @@ function reverseMessage1(str) {
   for (var i = 0,j=(arr.length)-1; i < arr.length/2; i++) {
     temp=arr[i]
     arr[i] = arr[j];
-    arr[j]=arr[i]
+    arr[j] = arr[i]
     arr[j] = temp; j--;
   }
   return arr.join(" ");
@@ -35,11 +35,11 @@ reverseMessage1(before);
 */
 function reverseMessage2(str) {
   var arr = str.split(" ");
-      result="";
+  var result = "";
   for (var i = arr.length-1; i >=0; i--) {
     result+=arr[i]+" ";
   }
-  return result;
+  return result.trim();
 };
 
 reverseMessage2(before);
@@ -52,8 +52,8 @@ reverseMessage2(before);
 */
 function reverseMessage3(str) {
   var arr = str.split(" "),
-    length = arr.length;
-    i = length/2 | 0;
+  var length = arr.length;
+  var i = length/2 | 0;
   while (i--) {
     arr.splice(i, 1, arr.splice(length-1-i, 1, arr[i])[0]);
   }
@@ -115,7 +115,7 @@ function reverseMessage6(str) {
   for(var j = arr.length-1; j >=0 ; j--) {
     result += arr[j] + " ";
   }
-  return result;
+  return result.trim();
 }
 
 reverseMessage6(before);
