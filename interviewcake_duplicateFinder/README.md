@@ -1,4 +1,4 @@
-[I'm an inline-style link with title](https://www.google.com "Interview Cake Challenge - Duplicate Finder")
+[Interview Cake Challenge - Duplicate Finder](https://www.google.com "Interview Cake Challenge - Duplicate Finder")
 
 ## You left your computer unlocked and your friend decided to troll you by copying a lot of your files to random spots all over your file system.
 
